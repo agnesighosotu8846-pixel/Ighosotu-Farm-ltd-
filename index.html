@@ -1,181 +1,106 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Shop garri and selected farm products from Ighosotu Farm Ltd. Contact us for product availability and delivery options.">
-  <title>Ighosotu Farm Ltd. | Garri & Farm Products</title>
-  <style>
-    :root { --blue:#174a82; --deep:#12365d; --pale:#eef5fc; --ink:#1d2b3a; --muted:#5d6b7b; --white:#fff; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; font-family:Arial,Helvetica,sans-serif; color:var(--ink); line-height:1.55; background:#fff; }
-    a { color:inherit; }
-    .wrap { width:min(1100px,92%); margin:auto; }
-    header { background:#fff; border-bottom:1px solid #e4ebf3; position:sticky; top:0; z-index:5; }
-    .nav { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0; }
-    .brand { display:flex; align-items:center; gap:10px; text-decoration:none; font-weight:800; color:var(--deep); }
-    .logo { width:42px; height:42px; display:grid; place-items:center; border-radius:50%; background:var(--pale); font-size:23px; }
-    .brand small { display:block; font-size:11px; letter-spacing:1px; color:var(--muted); font-weight:600; }
-    nav { display:flex; gap:20px; align-items:center; }
-    nav a { text-decoration:none; font-size:14px; font-weight:700; }
-    .btn { display:inline-block; padding:12px 18px; border-radius:9px; background:var(--blue); color:white; text-decoration:none; font-weight:700; border:0; cursor:pointer; }
-    .btn.secondary { background:white; color:var(--blue); border:1px solid var(--blue); }
-    .hero { background:linear-gradient(115deg,#edf5ff 0%,#fff 72%); padding:64px 0 56px; }
-    .hero-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:38px; align-items:center; }
-    .eyebrow { color:var(--blue); font-size:12px; font-weight:800; letter-spacing:1.8px; text-transform:uppercase; }
-    h1 { color:var(--deep); font-size:clamp(34px,5vw,55px); line-height:1.08; margin:12px 0 18px; }
-    h2 { color:var(--deep); font-size:clamp(25px,3vw,34px); margin:0 0 10px; }
-    .lead { font-size:18px; color:#4c5c6e; max-width:560px; }
-    .hero-art { min-height:290px; border-radius:24px; background:linear-gradient(145deg,#d8e9fb,#f8fbff); display:flex; flex-direction:column; justify-content:center; align-items:center; padding:28px; text-align:center; border:1px solid #d8e5f4; }
-    .hero-art .emoji { font-size:82px; }
-    .hero-art strong { font-size:20px; color:var(--deep); margin-top:12px; }
-    .hero-art span { color:var(--muted); font-size:13px; }
-    section { padding:58px 0; }
-    .section-intro { color:var(--muted); margin:0 0 28px; }
-    .products { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-    .product { border:1px solid #e1e9f2; border-radius:16px; overflow:hidden; background:#fff; }
-    .product-image { height:150px; display:grid; place-items:center; background:var(--pale); font-size:54px; }
-    .product-content { padding:18px; }
-    .product h3 { margin:0 0 7px; color:var(--deep); }
-    .product p { color:var(--muted); font-size:14px; min-height:44px; }
-    .price { font-weight:800; margin:12px 0; }
-    .note { background:#fff8e8; border:1px solid #f0dfb8; padding:14px 16px; border-radius:10px; color:#634c18; font-size:14px; margin-top:22px; }
-    .about { background:var(--pale); }
-    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center; }
-    .feature-list { padding-left:20px; }
-    .feature-list li { margin:9px 0; }
-    .contact-card { border:1px solid #dce7f3; border-radius:16px; padding:24px; background:#fff; }
-    .contact-card p { color:var(--muted); }
-    footer { background:var(--deep); color:white; padding:28px 0; }
-    footer .foot { display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; font-size:13px; }
-    .small { font-size:12px; color:var(--muted); }
-    @media (max-width:720px) {
-      nav { gap:10px; } nav a:not(.btn) { display:none; }
-      .hero { padding:42px 0; }
-      .hero-grid,.about-grid { grid-template-columns:1fr; }
-      .hero-art { min-height:220px; }
-      .products { grid-template-columns:1fr; }
-      .product-image { height:130px; }
-      section { padding:42px 0; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ighosotu Farm Ltd. | Garri & Farm Products</title>
+    <style>
+        :root { --blue: #174a82; --deep: #12365d; --muted: #666; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: Arial, Helvetica, sans-serif; background-color: #f9fbf9; color: #333; line-height: 1.6; }
+        .wrap { width: min(1100px, 92%); margin: auto; }
+        header { background: #fff; border-bottom: 1px solid #e1e9f2; padding: 15px 0; }
+        .nav { display: flex; align-items: center; justify-content: space-between; }
+        .brand { font-weight: bold; font-size: 20px; color: var(--blue); }
+        .hero { background: linear-gradient(115deg, #2E7D32, #4CAF50); color: white; padding: 60px 0; text-align: center; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 25px; }
+        .section { padding: 50px 0; }
+        .section-title { text-align: center; margin-bottom: 30px; color: var(--deep); }
+        .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .product { background: white; border: 1px solid #e1e9f2; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .product h3 { margin-bottom: 10px; color: var(--deep); }
+        .product p { color: var(--muted); margin-bottom: 15px; }
+        .price { font-weight: 800; color: #FF9800; font-size: 1.2rem; margin-bottom: 15px; display: block; }
+        .btn { display: inline-block; padding: 12px 25px; color: white; background: #FF9800; text-decoration: none; border-radius: 25px; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: none; cursor: pointer; }
+        .btn:hover { background: #e68a00; }
+        .btn.secondary { background: #ffffff; color: var(--blue); border: 2px solid var(--blue); margin-left: 10px; box-shadow: none; }
+        .btn.secondary:hover { background: #f0f4f8; }
+        .contact-box { background: #fff; border: 1px solid #e1e9f2; border-radius: 8px; padding: 40px; text-align: center; max-width: 600px; margin: 0 auto; }
+        .contact-box p { margin-bottom: 20px; color: var(--muted); }
+        .shipping-list { max-width: 500px; margin: 0 auto 30px; text-align: left; background: #f0f4f8; padding: 20px; border-radius: 6px; list-style-position: inside; }
+        .shipping-list li { margin-bottom: 8px; color: #444; }
+        footer { background: #12365d; color: #fff; text-align: center; padding: 20px 0; margin-top: 50px; font-size: 0.9rem; }
+    </style>
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="#home"><span class="logo">🌱</span><span>IGHOSOTU FARM LTD.<small>GARri & FARM PRODUCTS</small></span></a>
-    <nav>
-      <a href="#shop">Shop</a><a href="#about">About</a><a href="#delivery">Delivery</a>
-      <a class="btn" href="#contact">Contact us</a>
-    </nav>
-  </div>
-</header>
-<main>
-  <section class="hero" id="home">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="eyebrow">Welcome to Ighosotu Farm Ltd.</div>
-        <h1>Farm products, with care from our farm to your table.</h1>
-        <p class="lead">Explore our garri and selected farm products. Contact us to confirm current stock, pack sizes, prices and delivery options.</p>
-        <p><a class="btn" href="#shop">Explore products</a> <a class="btn secondary" href="#contact">Ask a question</a></p>
-      </div>
-      <div class="hero-art" aria-label="Farm produce illustration">
-        <div class="emoji">🌾 🥣 🌿</div>
-        <strong>Good produce. Trusted service.</strong>
-        <span>Product images and details can be added before launch.</span>
-      </div>
-    </div>
-  </section>
 
-  <section id="shop">
-    <div class="wrap">
-      <div class="eyebrow">Our products</div>
-      <h2>Shop farm produce</h2>
-      <p class="section-intro">These are starter listings. Replace them with the exact products, pack sizes, photos and prices you currently offer.</p>
-      <div class="products">
-        <article class="product">
-          <div class="product-image">🥣</div>
-          <div class="product-content">
-            <h3>Garri</h3>
-            <p>Available pack sizes and type to be confirmed with the farm.</p>
-            <div class="price">Price: contact us</div>
-            <a class="btn order-link" href="https://wa.me/2348034684233?text=Hello%20Ighosotu%20Farm%20Ltd.%2C%20I%20would%20like%20to%20enquire%20about%20Garri." target="_blank" rel="noopener">Enquire / Order</a>
-          </div>
-        </article>
-        <article class="product">
-          <div class="product-image">🌱</div>
-          <div class="product-content">
-            <h3>Cassava & farm produce</h3>
-            <p>Ask us about current availability, quantities and packaging.</p>
-            <div class="price">Price: contact us</div>
-            <a class="btn order-link" href="https://wa.me/2348034684233?text=Hello%20Ighosotu%20Farm%20Ltd.%2C%20I%20would%20like%20to%20enquire%20about%20Cassava%20and%20farm%20produce." target="_blank" rel="noopener">Enquire / Order</a>
-          </div>
-        </article>
-        <article class="product">
-          <div class="product-image">🌾</div>
-          <div class="product-content">
-            <h3>Other farm products</h3>
-            <p>Contact us for the current product list and bulk-order options.</p>
-            <div class="price">Price: contact us</div>
-            <a class="btn order-link" href="https://wa.me/2348034684233?text=Hello%20Ighosotu%20Farm%20Ltd.%2C%20I%20would%20like%20to%20enquire%20about%20your%20other%20farm%20products." target="_blank" rel="noopener">Enquire / Order</a>
-          </div>
-        </article>
-      </div>
-      <div class="note"><strong>Before taking payment:</strong> confirm the exact price, stock, shipping cost and destination eligibility. Do not collect payment through a placeholder link.</div>
-    </div>
-  </section>
+    <header>
+        <div class="wrap nav">
+            <div class="brand">Ighosotu Farm Ltd.</div>
+        </div>
+    </header>
 
-  <section class="about" id="about">
-    <div class="wrap about-grid">
-      <div>
-        <div class="eyebrow">About our farm</div>
-        <h2>Welcome to Ighosotu Farm Ltd.</h2>
-        <p>We aim to make it simple for customers to enquire about garri and farm products and arrange orders with clear information.</p>
-        <p class="small">Please edit this introduction to reflect your actual farm, products, production practices and business history. Do not claim certifications or quality guarantees unless they are verified.</p>
-      </div>
-      <div class="contact-card" id="delivery">
-        <h2>Delivery information</h2>
-        <p>We welcome enquiries from customers in Nigeria and abroad. International shipping depends on the destination, product, quantity, carrier and applicable import rules.</p>
-        <ul class="feature-list">
-          <li>Ask us to confirm delivery to your country.</li>
-          <li>Shipping fees are confirmed before payment.</li>
-          <li>Customers are responsible for any import duties or taxes unless agreed otherwise.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    <section class="hero">
+        <div class="wrap">
+            <h1>Premium Garri & Farm Products</h1>
+            <p>Export-quality agricultural items processed under global standards and delivered securely worldwide.</p>
+            <a href="#order" class="btn">View Products</a>
+        </div>
+    </section>
 
-  <section id="contact">
-    <div class="wrap">
-      <div class="eyebrow">Get in touch</div>
-      <h2>Ask about an order</h2>
-      <p class="section-intro">Add your real business contact details before publishing this website.</p>
-      <div class="contact-card">
-        <p><strong>Business:</strong> Ighosotu Farm Ltd.</p>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/2348034684233" target="_blank" rel="noopener">+234 803 468 4233</a></p>
-        <p><strong>Email:</strong> <a href="mailto:agnesighosotu8846@gmail.com">agnesighosotu8846@gmail.com</a></p>
-        <p><strong>Location:</strong> Add your business location if you want it shown publicly.</p>
-        <a class="btn" href="https://wa.me/2348034684233?text=Hello%20Ighosotu%20Farm%20Ltd.%2C%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" rel="noopener">Message us on WhatsApp</a>
-        <a class="btn secondary" href="mailto:agnesighosotu8846@gmail.com?subject=Ighosotu%20Farm%20product%20enquiry">Email an enquiry</a>
-      </div>
-    </div>
-  </section>
-</main>
-<footer>
-  <div class="wrap foot">
-    <strong>IGHOSOTU FARM LTD.</strong>
-    <span>© <span id="year"></span> Ighosotu Farm Ltd. All rights reserved.</span>
-    <span>Blue-and-white starter website</span>
-  </div>
-</footer>
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  document.querySelectorAll('.order-link').forEach(function(link) {
-    link.addEventListener('click', function() {
-      // Starter template: product enquiry links to Contact until a real checkout is configured.
-    });
-  });
-</script>
+    <section class="section" id="order">
+        <div class="wrap">
+            <h2 class="section-title">Our Featured Products</h2>
+            <div class="products">
+                <div class="product">
+                    <h3>Premium White Garri</h3>
+                    <p>Finely processed, well-dried, and completely sand-free crispy white garri perfect for global consumption.</p>
+                    <span class="price">International Pricing Options</span>
+                    <a href="https://wa.me" class="btn" target="_blank">Order via WhatsApp</a>
+                </div>
+                <div class="product">
+                    <h3>Premium Yellow Garri</h3>
+                    <p>Processed cleanly with rich, organic palm oil, offering an authentic traditional taste for export markets.</p>
+                    <span class="price">International Pricing Options</span>
+                    <a href="https://wa.me" class="btn" target="_blank">Order via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #f0f4f8;">
+        <div class="wrap">
+            <h2 class="section-title">Global Shipping Terms</h2>
+            <ul class="shipping-list">
+                <li>✈️ Secure air and sea freight delivery to your destination country.</li>
+                <li>📦 All international orders are thoroughly confirmed and documented before shipping.</li>
+                <li>Customs processing and tracking information provided directly to buyers.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="wrap">
+            <div class="contact-box">
+                <h2 style="color: var(--deep); margin-bottom: 10px;">Place An International Order</h2>
+                <p>Have questions about bulk shipping, customs, or current supply availability? Contact our trade desk instantly.</p>
+                <a href="https://wa.me" class="btn" target="_blank">Chat on WhatsApp</a>
+                <a href="mailto:agnesighosotu8846@://gmail.com" class="btn secondary">Email Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap">
+            <p>&copy; <span id="year">2026</span> Ighosotu Farm Ltd. All rights reserved. | Export & Global Logistics Division</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
+
