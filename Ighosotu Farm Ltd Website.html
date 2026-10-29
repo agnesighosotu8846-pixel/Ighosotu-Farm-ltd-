@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ighosotu Farm Ltd | Premium Spices, Snacks & Pure Honey</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        farm: {
+                            green: '#2E7D32',
+                            darkgreen: '#1B5E20',
+                            lightgreen: '#E8F5E9',
+                            amber: '#E65100',
+                            gold: '#D97706',
+                            goldlight: '#FEF3C7',
+                            cream: '#FAF8F5',
+                            charcoal: '#1F2937'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FAF8F5;
+            color: #1F2937;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(27, 94, 32, 0.92) 0%, rgba(46, 125, 50, 0.85) 60%, rgba(230, 81, 0, 0.75) 100%),
+                        url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        }
+        .spice-pattern {
+            background-color: #FAF8F5;
+            background-image: radial-gradient(#2E7D32 0.5px, transparent 0.5px), radial-gradient(#E65100 0.5px, #FAF8F5 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            background-opacity: 0.05;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-farm-green selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-farm-darkgreen text-white text-xs sm:text-sm py-2 px-4 text-center font-medium flex justify-center items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Fresh Batch Ready! Direct Delivery from Ukuidjere, Delta State & Nationwide Shipping Available</span>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-farm-green to-farm-darkgreen text-white flex items-center justify-center font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
+                        <i class="fa-solid font-bold fa-leaf text-amber-300"></i>
+                    </div>
+                    <div>
+                        <span class="block text-xl font-extrabold text-farm-darkgreen leading-none tracking-tight">IGHOSOTU</span>
+                        <span class="text-xs font-bold text-farm-amber tracking-widest uppercase">FARM LTD</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center gap-8 font-semibold text-stone-700 text-sm">
+                    <a href="#products" class="hover:text-farm-green transition-colors">Products</a>
+                    <a href="#why-us" class="hover:text-farm-green transition-colors">Why Choose Us</a>
+                    <a href="#about" class="hover:text-farm-green transition-colors">Our Story</a>
+                    <a href="#reviews" class="hover:text-farm-green transition-colors">Reviews</a>
+                    <a href="#contact" class="hover:text-farm-green transition-colors">Contact</a>
+                </nav>
+
+                <!-- Action CTA -->
+                <div class="flex items-center gap-3">
+                    <button onclick="openOrderModal()" class="hidden sm:flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-4 rounded-xl text-sm shadow-md transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-lg">="Order via WhatsApp"></i>
+                        <span>Build Order</span>
+                    </button>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2.5 text-stone-700 hover:text-farm-green focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-stone-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#products" onclick="toggleMobileMenu()" class="block py-2 font-medium text-stone-700 hover:text-farm-green border-b border-stone-100">Products</a>
+            <a href="#why-us" onclick="toggleMobileMenu()" class="block py-2 font-medium text-stone-700 hover:text-farm-green border-b border-stone-100">Why Choose Us</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 font-medium text-stone-700 hover:text-farm-green border-b border-stone-100">Our Story</a>
+            <a href="#reviews" onclick="toggleMobileMenu()" class="block py-2 font-medium text-stone-700 hover:text-farm-green border-b border-stone-100">Reviews</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 font-medium text-stone-700 hover:text-farm-green">Contact</a>
+            <button onclick="openOrderModal(); toggleMobileMenu();" class="w-full flex items-center justify-center gap-2 bg-emerald-600 text-white font-bold py-3 rounded-xl shadow mt-2">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>Order via WhatsApp</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20 lg:py-28 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-amber-200 mb-6 border border-white/20">
+                    <i class="fa-solid fa-location-dot"></i> Ukuidjere, Delta State, Nigeria
+                </div>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+                    Authentic Farm-Fresh Spices, Snacks & Pure Honey
+                </h1>
+                <p class="text-stone-100 text-base sm:text-lg lg:text-xl font-normal leading-relaxed mb-8 max-w-2xl">
+                    Crafted with pride in Delta State. Taste the genuine warmth of traditional Banga & Pepper Soup Spices, irresistibly crispy Plantain Chips, crunchy Chin Chin, and 100% unrefined natural Honey.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#products" class="inline-flex justify-center items-center gap-2 bg-farm-amber hover:bg-orange-600 text-white font-bold py-3.5 px-7 rounded-xl text-base shadow-lg transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-store"></i>
+                        <span>View Product Catalog</span>
+                    </a>
+                    <button onclick="openOrderModal()" class="inline-flex justify-center items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 px-7 rounded-xl text-base shadow-lg transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Order via WhatsApp</span>
+                    </button>
+                </div>
+
+                <!-- Quick Highlights -->
+                <div class="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-white/20 max-w-xl">
+                    <div>
+                        <span class="block text-xl sm:text-2xl font-extrabold text-amber-300">100%</span>
+                        <span class="text-xs sm:text-sm text-stone-200 font-medium">Natural Ingredients</span>
+                    </div>
+                    <div>
+                        <span class="block text-xl sm:text-2xl font-extrabold text-amber-300">Farm</span>
+                        <span class="text-xs sm:text-sm text-stone-200 font-medium">Fresh Quality</span>
+                    </div>
+                    <div>
+                        <span class="block text-xl sm:text-2xl font-extrabold text-amber-300">Retail &</span>
+                        <span class="text-xs sm:text-sm text-stone-200 font-medium">Wholesale Orders</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="products" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-farm-amber font-bold text-sm tracking-wider uppercase">Our Signature Collection</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-farm-darkgreen mt-1 mb-4">Fresh From Our Farm To Your Table</h2>
+            <p class="text-stone-600 text-base">Select from our authentic range of Delta spices, crunchy snacks, and raw organic honey.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10">
+            <button onclick="filterProducts('all')" id="btn-all" class="filter-btn active-filter px-5 py-2.5 rounded-full font-semibold text-sm transition-all bg-farm-green text-white shadow-sm">All Products</button>
+            <button onclick="filterProducts('spices')" id="btn-spices" class="filter-btn px-5 py-2.5 rounded-full font-semibold text-sm transition-all bg-stone-200 text-stone-700 hover:bg-stone-300">Spices & Seasonings</button>
+            <button onclick="filterProducts('snacks')" id="btn-snacks" class="filter-btn px-5 py-2.5 rounded-full font-semibold text-sm transition-all bg-stone-200 text-stone-700 hover:bg-stone-300">Snacks</button>
+            <button onclick="filterProducts('honey')" id="btn-honey" class="filter-btn px-5 py-2.5 rounded-full font-semibold text-sm transition-all bg-stone-200 text-stone-700 hover:bg-stone-300">Natural Honey</button>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="product-grid">
+            
+            <!-- Card 1: Banga Spice Blend -->
+            <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-md border border-stone-200 hover:shadow-xl transition-all duration-300 flex flex-col" data-category="spices">
+                <div class="relative h-56 overflow-hidden bg-stone-100">
+                    <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80" alt="Authentic Banga Spice Blend" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-3 right-3 bg-farm-amber text-white text-xs font-bold px-3 py-1 rounded-full shadow">Best Seller</span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-extrabold text-xl text-stone-900 group-hover:text-farm-green transition-colors">Banga Spice Blend</h3>
+                            <span class="font-extrabold text-lg text-farm-green">₦1,500</span>
+                        </div>
+                        <p class="text-stone-600 text-sm mb-4 leading-relaxed">Traditional Urhobo / Delta recipe prepared with indigenous herbs and spices for authentic, rich Banga soup aroma.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-semibold bg-emerald-50 text-emerald-800 px-2.5 py-1 rounded-md border border-emerald-100">100% Organic</span>
+                            <span class="text-xs font-semibold bg-stone-100 text-stone-700 px-2.5 py-1 rounded-md">150g Pack</span>
+                        </div>
+                    </div>
+                    <button onclick="directOrder('Banga Spice Blend', '₦1,500')" class="w-full bg-stone-900 hover:bg-farm-green text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-colors">
+                        <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                        <span>Order via WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2: Pepper Soup Spice -->
+            <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-md border border-stone-200 hover:shadow-xl transition-all duration-300 flex flex-col" data-category="spices">
+                <div class="relative h-56 overflow-hidden bg-stone-100">
+                    <img src="https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&w=600&q=80" alt="Delta Pepper Soup Spice" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-3 right-3 bg-farm-green text-white text-xs font-bold px-3 py-1 rounded-full shadow">Popular</span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-extrabold text-xl text-stone-900 group-hover:text-farm-green transition-colors">Pepper Soup Spice</h3>
+                            <span class="font-extrabold text-lg text-farm-green">₦1,200</span>
+                        </div>
+                        <p class="text-stone-600 text-sm mb-4 leading-relaxed">Aromatic, soothing, and fiery natural seed spice mix. Ideal for fish, meat, and traditional herbal broths.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-semibold bg-emerald-50 text-emerald-800 px-2.5 py-1 rounded-md border border-emerald-100">Rich Aroma</span>
+                            <span class="text-xs font-semibold bg-stone-100 text-stone-700 px-2.5 py-1 rounded-md">100g Pack</span>
+                        </div>
+                    </div>
+                    <button onclick="directOrder('Pepper Soup Spice', '₦1,200')" class="w-full bg-stone-900 hover:bg-farm-green text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-colors">
+                        <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                        <span>Order via WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 3: Crunchy Plantain Chips -->
+            <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-md border border-stone-200 hover:shadow-xl transition-all duration-300 flex flex-col" data-category="snacks">
+                <div class="relative h-56 overflow-hidden bg-stone-100">
+                    <img src="https://images.unsplash.com/photo-1621447504864-d8686e12698c?auto=format&fit=crop&w=600&q=80" alt="Crispy Plantain Chips" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-3 right-3 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">Fresh Snack</span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-extrabold text-xl text-stone-900 group-hover:text-farm-green transition-colors">Crunchy Plantain Chips</h3>
+                            <span class="font-extrabold text-lg text-farm-green">₦800</span>
+                        </div>
+                        <p class="text-stone-600 text-sm mb-4 leading-relaxed">Freshly sliced, crisp plantain chips made from farm-harvested plantains. Available in Lightly Salted or Sweet options.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-semibold bg-amber-50 text-amber-800 px-2.5 py-1 rounded-md border border-amber-100">Zero Preservatives</span>
+                            <span class="text-xs font-semibold bg-stone-100 text-stone-700 px-2.5 py-1 rounded-md">Family Pack</span>
+                        </div>
+                    </div>
+                    <button onclick="directOrder('Crunchy Plantain Chips', '₦800')" class="w-full bg-stone-900 hover:bg-farm-green text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-colors">
+                        <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                        <span>Order via WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 4: Crispy Chin Chin -->
+            <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-md border border-stone-200 hover:shadow-xl transition-all duration-300 flex flex-col" data-category="snacks">
+                <div class="relative h-56 overflow-hidden bg-stone-100">
+                    <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80" alt="Crispy Chin Chin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-extrabold text-xl text-stone-900 group-hover:text-farm-green transition-colors">Golden Crispy Chin Chin</h3>
+                            <span class="font-extrabold text-lg text-farm-green">₦1,000</span>
+                        </div>
+                        <p class="text-stone-600 text-sm mb-4 leading-relaxed">Rich, milky, crunchy baked & fried standard pastry cubes. Perfectly seasoned for daily munching and events.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-semibold bg-amber-50 text-amber-800 px-2.5 py-1 rounded-md border border-amber-100">Milky & Crunchy</span>
+                            <span class="text-xs font-semibold bg-stone-100 text-stone-700 px-2.5 py-1 rounded-md">250g Container</span>
+                        </div>
+                    </div>
+                    <button onclick="directOrder('Golden Crispy Chin Chin', '₦1,000')" class="w-full bg-stone-900 hover:bg-farm-green text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-colors">
+                        <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                        <span>Order via WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 5: Pure Organic Honey -->
+            <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-md border border-stone-200 hover:shadow-xl transition-all duration-300 flex flex-col" data-category="honey">
+                <div class="relative h-56 overflow-hidden bg-stone-100">
+                    <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=600&q=80" alt="Pure Farm Honey" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-3 right-3 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">100% Unrefined</span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-extrabold text-xl text-stone-900 group-hover:text-farm-green transition-colors">Pure Natural Honey</h3>
+                            <span class="font-extrabold text-lg text-farm-green">₦3,500</span>
+                        </div>
+                        <p class="text-stone-600 text-sm mb-4 leading-relaxed">Raw, unadulterated honey directly from wild farm beehives. Free from added sugars, chemicals, or heating.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-semibold bg-amber-100 text-amber-900 px-2.5 py-1 rounded-md border border-amber-200">Raw & Unrefined</span>
+                            <span class="text-xs font-semibold bg-stone-100 text-stone-700 px-2.5 py-1 rounded-md">500ml Bottle</span>
+                        </div>
+                    </div>
+                    <button onclick="directOrder('Pure Natural Honey', '₦3,500')" class="w-full bg-stone-900 hover:bg-farm-green text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-colors">
+                        <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                        <span>Order via WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 6: Wholesale Variety Pack -->
+            <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-md border border-stone-200 hover:shadow-xl transition-all duration-300 flex flex-col" data-category="spices">
+                <div class="relative h-56 overflow-hidden bg-stone-100">
+                    <img src="https://images.unsplash.com/photo-1509358217950-4ff4281f62c6?auto=format&fit=crop&w=600&q=80" alt="Ighosotu Family Combo Pack" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">Best Value</span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-extrabold text-xl text-stone-900 group-hover:text-farm-green transition-colors">Ighosotu Family Combo</h3>
+                            <span class="font-extrabold text-lg text-farm-green">₦7,500</span>
+                        </div>
+                        <p class="text-stone-600 text-sm mb-4 leading-relaxed">Includes Banga Spice + Pepper Soup Spice + Large Plantain Chips + Chin Chin + 500ml Raw Honey at a discounted price.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-semibold bg-red-50 text-red-700 px-2.5 py-1 rounded-md border border-red-100">Save ₦500</span>
+                            <span class="text-xs font-semibold bg-stone-100 text-stone-700 px-2.5 py-1 rounded-md">Full Pack</span>
+                        </div>
+                    </div>
+                    <button onclick="directOrder('Ighosotu Family Combo', '₦7,500')" class="w-full bg-stone-900 hover:bg-farm-green text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-colors">
+                        <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                        <span>Order via WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" class="bg-farm-lightgreen/60 py-16 lg:py-24 border-y border-emerald-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-farm-amber font-bold text-sm tracking-wider uppercase">Our Promise</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-farm-darkgreen mt-1">Why Choose Ighosotu Farm Ltd?</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-emerald-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-emerald-100 text-farm-green rounded-2xl flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3 class="font-extrabold text-xl text-stone-900 mb-3">100% Natural</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">No artificial preservatives, colorings, or fillers. Just pure farm harvest from Delta State.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-emerald-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-amber-100 text-farm-amber rounded-2xl flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fa-solid fa-mortar-pestle"></i>
+                    </div>
+                    <h3 class="font-extrabold text-xl text-stone-900 mb-3">Authentic Delta Blends</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">Crafted using traditional Delta recipes to give your meals that genuine home-cooked aroma.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-emerald-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-emerald-100 text-farm-green rounded-2xl flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fa-solid fa-pump-soap"></i>
+                    </div>
+                    <h3 class="font-extrabold text-xl text-stone-900 mb-3">Hygienic Packaging</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">Processed under strict sanitary standards and sealed securely to ensure long-lasting freshness.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white p-8 rounded-2xl border border-emerald-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-amber-100 text-farm-amber rounded-2xl flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h3 class="font-extrabold text-xl text-stone-900 mb-3">Retail & Wholesale</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">Whether for personal home use, events, or retail reselling, we deliver promptly nationwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story / About Us Section -->
+    <section id="about" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="relative">
+                <div class="aspect-w-4 aspect-h-3 rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                    <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1000&q=80" alt="Ighosotu Farm Location" class="w-full h-[400px] object-cover">
+                </div>
+                <div class="absolute -bottom-6 -right-6 bg-farm-darkgreen text-white p-6 rounded-2xl shadow-xl hidden sm:block max-w-xs">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-award text-3xl text-amber-300"></i>
+                        <div>
+                            <span class="block font-bold text-lg">Rooted in Heritage</span>
+                            <span class="text-xs text-stone-200">Ukuidjere, Delta State</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <span class="text-farm-amber font-bold text-sm tracking-wider uppercase">Our Roots & Heritage</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-farm-darkgreen mt-1 mb-6">Bringing Delta's Finest Harvest Directly To You</h2>
+                <p class="text-stone-600 text-base leading-relaxed mb-4">
+                    At <strong>Ighosotu Farm Ltd</strong>, based in the fertile grounds of <strong>Ukuidjere, Delta State</strong>, we are committed to preserving the vibrant flavors and authentic traditional taste of South-South Nigeria.
+                </p>
+                <p class="text-stone-600 text-base leading-relaxed mb-6">
+                    From sun-dried indigenous spices milled into aromatic Banga and Pepper Soup blends, to freshly sliced plantain chips, golden chin chin, and pure raw beehive honey — every package represents our dedication to quality, cleanliness, and organic goodness.
+                </p>
+                <div class="flex items-center gap-6 pt-4 border-t border-stone-200">
+                    <div>
+                        <span class="block text-2xl font-black text-farm-green">100%</span>
+                        <span class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Organic Standard</span>
+                    </div>
+                    <div class="h-10 w-px bg-stone-300"></div>
+                    <div>
+                        <span class="block text-2xl font-black text-farm-green">Delta</span>
+                        <span class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Originated</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Reviews -->
+    <section id="reviews" class="bg-stone-900 text-white py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-amber-400 font-bold text-sm tracking-wider uppercase">What Customers Say</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-1">Loved by Home Cooks & Snack Lovers</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-stone-800/80 p-8 rounded-2xl border border-stone-700 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-300 text-sm leading-relaxed mb-6">"The Banga spice blend gives my soup that authentic village flavor I haven't tasted in years. Smells fresh and completely natural!"</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-farm-green flex items-center justify-center font-bold text-white">
+                            EO
+                        </div>
+                        <div>
+                            <span class="block font-bold text-sm">Efe O.</span>
+                            <span class="text-xs text-stone-400">Warri, Delta State</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-stone-800/80 p-8 rounded-2xl border border-stone-700 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-300 text-sm leading-relaxed mb-6">"I ordered plantain chips and chin chin for my kids. Super crispy, zero excess oil, and very neat packaging. We finished it in 2 days!"</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-farm-amber flex items-center justify-center font-bold text-white">
+                            AM
+                        </div>
+                        <div>
+                            <span class="block font-bold text-sm">Amina M.</span>
+                            <span class="text-xs text-stone-400">Asaba, Delta State</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-stone-800/80 p-8 rounded-2xl border border-stone-700 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-300 text-sm leading-relaxed mb-6">"Finding 100% genuine honey is hard nowadays, but Ighosotu Farm delivered pure honey. Tested and trusted!"</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center font-bold text-white">
+                            CK
+                        </div>
+                        <div>
+                            <span class="block font-bold text-sm">Chief K.</span>
+                            <span class="text-xs text-stone-400">Port Harcourt</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location -->
+    <section id="contact" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-3xl shadow-lg border border-stone-200 overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+                <div class="p-8 lg:p-12 bg-farm-darkgreen text-white">
+                    <span class="text-amber-300 font-bold text-sm tracking-wider uppercase">Get In Touch</span>
+                    <h2 class="text-3xl font-extrabold mt-1 mb-6">Order Directly or Inquire Wholesale</h2>
+                    <p class="text-stone-200 text-sm leading-relaxed mb-8">Have questions about bulk orders, reselling, or customized packaging? Reach out directly via WhatsApp or phone call.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-amber-300 flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="block font-bold text-sm text-stone-200">Farm Location</span>
+                                <span class="text-white text-base">Ukuidjere, Delta State, Nigeria</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-amber-300 flex-shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="block font-bold text-sm text-stone-200">Phone / WhatsApp</span>
+                                <a href="tel:+2348000000000" class="text-white text-base hover:underline">+234 800 000 0000</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-amber-300 flex-shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="block font-bold text-sm text-stone-200">Email Address</span>
+                                <span class="text-white text-base">ighosotufarmltd@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 lg:p-12">
+                    <h3 class="text-2xl font-extrabold text-stone-900 mb-6">Send Us a Quick Message</h3>
+                    <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-stone-700 uppercase mb-1">Your Full Name</label>
+                            <input type="text" id="contact-name" required placeholder="e.g. Blessing Okoro" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-farm-green text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-stone-700 uppercase mb-1">Phone Number</label>
+                            <input type="tel" id="contact-phone" required placeholder="e.g. 08012345678" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-farm-green text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-stone-700 uppercase mb-1">Message or Inquiries</label>
+                            <textarea id="contact-message" rows="4" required placeholder="I would like to inquire about wholesale prices for Banga Spices..." class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-farm-green text-sm"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-farm-green hover:bg-farm-darkgreen text-white font-bold py-3.5 px-6 rounded-xl transition-colors shadow">
+                            Send via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-950 text-stone-400 py-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-farm-green text-white flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-leaf text-amber-300"></i>
+                        </div>
+                        <span class="text-xl font-extrabold text-white">IGHOSOTU FARM LTD</span>
+                    </div>
+                    <p class="text-sm leading-relaxed max-w-sm mb-4">
+                        Producers of 100% natural Delta spices, crunchy plantain chips, golden chin chin, and pure raw honey. Freshly harvested and packed in Ukuidjere, Delta State.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#products" class="hover:text-amber-400">Product Catalog</a></li>
+                        <li><a href="#why-us" class="hover:text-amber-400">Why Choose Us</a></li>
+                        <li><a href="#about" class="hover:text-amber-400">Our Heritage</a></li>
+                        <li><a href="#contact" class="hover:text-amber-400">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4">Connect With Us</h4>
+                    <div class="flex gap-3">
+                        <a href="https://wa.me/2348000000000" class="w-10 h-10 rounded-xl bg-stone-800 hover:bg-emerald-600 text-white flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-stone-800 hover:bg-blue-600 text-white flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-facebook-f text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-stone-800 hover:bg-pink-600 text-white flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-stone-800 text-xs text-center flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; <span id="year"></span> Ighosotu Farm Ltd. All Rights Reserved. Ukuidjere, Delta State, Nigeria.</p>
+                <p class="text-stone-500">Quality Farm Products • Pure & Hygienic</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive WhatsApp Order Modal -->
+    <div id="order-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl relative">
+            <button onclick="closeOrderModal()" class="absolute top-5 right-5 text-stone-400 hover:text-stone-700 text-2xl font-bold">
+                &times;
+            </button>
+            
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xl">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-extrabold text-stone-900">Build Your Order</h3>
+                    <p class="text-xs text-stone-500">Select items & send straight to our WhatsApp line</p>
+                </div>
+            </div>
+
+            <form id="order-builder-form" onsubmit="generateWhatsAppOrder(event)" class="space-y-4">
+                <div class="space-y-3">
+                    <!-- Item 1 -->
+                    <div class="flex items-center justify-between p-3 bg-stone-50 rounded-xl border border-stone-200">
+                        <div>
+                            <span class="block font-bold text-sm text-stone-900">Banga Spice Blend</span>
+                            <span class="text-xs text-farm-green font-semibold">₦1,500 / pack</span>
+                        </div>
+                        <input type="number" min="0" value="0" data-name="Banga Spice Blend" data-price="1500" class="item-qty w-16 p-2 text-center rounded-lg border border-stone-300 font-bold text-sm">
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="flex items-center justify-between p-3 bg-stone-50 rounded-xl border border-stone-200">
+                        <div>
+                            <span class="block font-bold text-sm text-stone-900">Pepper Soup Spice</span>
+                            <span class="text-xs text-farm-green font-semibold">₦1,200 / pack</span>
+                        </div>
+                        <input type="number" min="0" value="0" data-name="Pepper Soup Spice" data-price="1200" class="item-qty w-16 p-2 text-center rounded-lg border border-stone-300 font-bold text-sm">
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="flex items-center justify-between p-3 bg-stone-50 rounded-xl border border-stone-200">
+                        <div>
+                            <span class="block font-bold text-sm text-stone-900">Crunchy Plantain Chips</span>
+                            <span class="text-xs text-farm-green font-semibold">₦800 / pack</span>
+                        </div>
+                        <input type="number" min="0" value="0" data-name="Crunchy Plantain Chips" data-price="800" class="item-qty w-16 p-2 text-center rounded-lg border border-stone-300 font-bold text-sm">
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="flex items-center justify-between p-3 bg-stone-50 rounded-xl border border-stone-200">
+                        <div>
+                            <span class="block font-bold text-sm text-stone-900">Golden Crispy Chin Chin</span>
+                            <span class="text-xs text-farm-green font-semibold">₦1,000 / pack</span>
+                        </div>
+                        <input type="number" min="0" value="0" data-name="Golden Crispy Chin Chin" data-price="1000" class="item-qty w-16 p-2 text-center rounded-lg border border-stone-300 font-bold text-sm">
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="flex items-center justify-between p-3 bg-stone-50 rounded-xl border border-stone-200">
+                        <div>
+                            <span class="block font-bold text-sm text-stone-900">Pure Natural Honey (500ml)</span>
+                            <span class="text-xs text-farm-green font-semibold">₦3,500 / bottle</span>
+                        </div>
+                        <input type="number" min="0" value="0" data-name="Pure Natural Honey" data-price="3500" class="item-qty w-16 p-2 text-center rounded-lg border border-stone-300 font-bold text-sm">
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-stone-200">
+                    <div class="mb-4">
+                        <label class="block text-xs font-bold text-stone-700 uppercase mb-1">Delivery Address / City</label>
+                        <input type="text" id="delivery-location" required placeholder="e.g. Effurun, Warri / Benin / Lagos" class="w-full p-3 rounded-xl border border-stone-300 text-sm">
+                    </div>
+                    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 shadow">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Send Order via WhatsApp</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Filter Products Functionality
+        function filterProducts(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+
+            filterBtns.forEach(btn => {
+                btn.classList.remove('bg-farm-green', 'text-white');
+                btn.classList.add('bg-stone-200', 'text-stone-700');
+            });
+
+            const activeBtn = document.getElementById(`btn-${category}`);
+            if(activeBtn) {
+                activeBtn.classList.remove('bg-stone-200', 'text-stone-700');
+                activeBtn.classList.add('bg-farm-green', 'text-white');
+            }
+
+            cards.forEach(card => {
+                if(category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // WhatsApp Direct Item Order
+        function directOrder(itemName, price) {
+            const phone = "2348000000000"; // Replace with actual phone number
+            const message = `Hello Ighosotu Farm Ltd! I would like to order: *${itemName}* (${price}). Please let me know the available payment and delivery options.`;
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
+        }
+
+        // Order Modal Handlers
+        function openOrderModal() {
+            document.getElementById('order-modal').classList.remove('hidden');
+        }
+
+        function closeOrderModal() {
+            document.getElementById('order-modal').classList.add('hidden');
+        }
+
+        // Generate Custom WhatsApp Order from Builder
+        function generateWhatsAppOrder(event) {
+            event.preventDefault();
+            const inputs = document.querySelectorAll('.item-qty');
+            const location = document.getElementById('delivery-location').value;
+            let orderItems = [];
+            let grandTotal = 0;
+
+            inputs.forEach(input => {
+                const qty = parseInt(input.value);
+                if (qty > 0) {
+                    const name = input.dataset.name;
+                    const price = parseInt(input.dataset.price);
+                    const subtotal = qty * price;
+                    grandTotal += subtotal;
+                    orderItems.push(`- ${name} x${qty} (₦${subtotal.toLocaleString()})`);
+                }
+            });
+
+            if (orderItems.length === 0) {
+                alert("Please select at least 1 item to proceed with your order.");
+                return;
+            }
+
+            const phone = "2348000000000"; // Replace with actual business WhatsApp line
+            let message = `Hello *Ighosotu Farm Ltd*,\n\nI would like to place an order:\n`;
+            message += orderItems.join('\n') + `\n\n`;
+            message += `*Total Amount:* ₦${grandTotal.toLocaleString()}\n`;
+            message += `*Delivery Location:* ${location}\n\n`;
+            message += `Please confirm availability and account details. Thank you!`;
+
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
+            closeOrderModal();
+        }
+
+        // Handle Contact Form Submit
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('contact-name').value;
+            const userPhone = document.getElementById('contact-phone').value;
+            const message = document.getElementById('contact-message').value;
+
+            const targetPhone = "2348000000000"; // Replace with actual business number
+            const text = `Hello Ighosotu Farm Ltd!\n\nMy name is *${name}* (${userPhone}).\n\n${message}`;
+
+            window.open(`https://wa.me/${targetPhone}?text=${encodeURIComponent(text)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
